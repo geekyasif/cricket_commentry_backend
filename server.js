@@ -16,7 +16,7 @@ async function getUpdatedData() {
 }
 
 io.on("connection", (socket) => {
-  console.log("socket listening....");
+  socket.join("all");
 
   // adding new player (striker and non striker) to the database
   socket.on("add-new-player", async ({ scoreboardId, newPlayer }) => {
@@ -31,7 +31,7 @@ io.on("connection", (socket) => {
 
     // sending updated data to the frontend
     const updatedData = await getUpdatedData();
-    socket.emit("updatedScoreboard", updatedData);
+    io.to("all").emit("updatedScoreboard", updatedData);
   });
 
   // updating the scoreboard and db with latest data
@@ -84,7 +84,7 @@ io.on("connection", (socket) => {
     }
     // sending updated data to the frontend
     const updatedData = await getUpdatedData();
-    socket.emit("updatedScoreboard", updatedData);
+    io.to("all").emit("updatedScoreboard", updatedData);
   });
 
   socket.on("clear-scoreboard", async (id) => {
@@ -104,7 +104,7 @@ io.on("connection", (socket) => {
 
     // sending updated data to the frontend
     const updatedData = await getUpdatedData();
-    socket.emit("updatedScoreboard", updatedData);
+    io.to("all").emit("updatedScoreboard", updatedData);
   });
 });
 
