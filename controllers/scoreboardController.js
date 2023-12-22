@@ -1,3 +1,5 @@
+const Scoreboard = require("../models/scoreboard");
+
 async function scoreboardController(req, res) {
   const scoreboard = await Scoreboard.findOne();
   if (!scoreboard) {
