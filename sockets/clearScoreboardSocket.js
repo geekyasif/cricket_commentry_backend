@@ -4,7 +4,6 @@ const getUpdatedData = require("../services/getUpdatedData");
 function clearScoreboardSocket(io, socket) {
   socket.on("clear-scoreboard", async (id) => {
     await Scoreboard.deleteOne({ _id: id });
-    console.log("deleted succesffulyy");
     const newScoreboard = new Scoreboard({
       team_scoreboard: {
         total_runs: 0,
