@@ -1,6 +1,13 @@
 async function clearStrikerInputFieldOnWicket(io, socket) {
   socket.on("clear_striker_input", () => {
-    socket.broadcast.to("all").emit("striker_input_cleaned");
+    try {
+      socket.broadcast.to("all").emit("striker_input_cleaned");
+    } catch (error) {
+      io.to("all").emit("error", {
+        error: error,
+        message: "Clear Striker Input Error!",
+      });
+    }
   });
 }
 

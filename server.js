@@ -7,7 +7,6 @@ const clearScoreboardSocket = require("./sockets/clearScoreboardSocket");
 const swapStrikerNonStriker = require("./sockets/swapStrikerNonStriker");
 const clearStrikerInputFieldOnWicket = require("./sockets/clearStrikerInputFieldOnWicket");
 const clearNonStrikerInputFieldOnRunWicket = require("./sockets/clearNonStrikerInputFieldOnRunWicket");
-const BallEvent = require("./models/ballEvent");
 
 const server = createServer(app);
 const io = new Server(server, {
