@@ -3,7 +3,7 @@
 ### 1. Clone the repo by running the command in your terminal
 ### git clone https://github.com/geekyasif/cricket_commentry_backend
 ### 2. Install the necessary dependencies by running 'npm install'.
-### 3. Go to server.js file and change your mongodb url (mongoDb compass / MongoDb Atlas)
+### 3. Go to app.js file and change your mongodb url (mongoDb compass / MongoDb Atlas)
 ### 4. Finally, start the server by running 'npm run start'.
 
 ## To use this project Setup the frontend part of this project here the link https://github.com/geekyasif/cricket_commentry
